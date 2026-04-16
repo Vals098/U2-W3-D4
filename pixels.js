@@ -1,6 +1,5 @@
 const API_KEY = "WgEAmxpIXv4ZVN2DhzZaBO26HgL6rAvy7UIgo1rTMRsLlKDT59vucRja"
 
-
 // FIRST FETCH: HAMSTERS
 const getImages = function () {
   fetch("https://api.pexels.com/v1/search?query=hamsters", {
@@ -37,7 +36,6 @@ const getImages = function () {
 
 document.getElementById("loadImages").addEventListener("click", getImages)
 
-
 // SECOND FETCH: TIGERS
 const getSecondaryImages = function () {
   fetch("https://api.pexels.com/v1/search?query=tigers", {
@@ -72,4 +70,21 @@ const getSecondaryImages = function () {
     })
 }
 
-document.getElementById("loadSecondaryImages").addEventListener("click", getSecondaryImages)
+document
+  .getElementById("loadSecondaryImages")
+  .addEventListener("click", getSecondaryImages)
+
+// HIDE BUTTON
+const hideButtons = document.querySelectorAll(".hide-btn")
+
+hideButtons.forEach((button) => {
+  // change text
+  button.textContent = "Hide"
+  // add event listener
+  button.addEventListener("click", (e) => {
+    // get the closest container that has that class
+    const closestCard = e.target.closest(".col-md-4")
+    // add the class d-none
+    closestCard.classList.add("d-none")
+  })
+})
