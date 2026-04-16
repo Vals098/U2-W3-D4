@@ -27,6 +27,9 @@ const getImages = function () {
         const img = card.querySelector("img")
         // decide the dimension of the image by .large .medium .small . portrait .landscape ...
         img.src = photo.src.medium
+        // 9 mins to id
+        const small = card.querySelector(".text-muted")
+        small.textContent = photo.id
       })
     })
     .catch((error) => {
@@ -63,6 +66,10 @@ const getSecondaryImages = function () {
         const img = card.querySelector("img")
         // decide the dimension of the image by .large .medium .small . portrait .landscape ...
         img.src = photo.src.medium
+
+        // 9 mins to id
+        const small = card.querySelector(".text-muted")
+        small.textContent = photo.id
       })
     })
     .catch((error) => {
@@ -88,3 +95,5 @@ hideButtons.forEach((button) => {
     closestCard.classList.add("d-none")
   })
 })
+
+// 9 mins to id
